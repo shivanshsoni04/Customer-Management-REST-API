@@ -1,7 +1,7 @@
 # --------------------------
 # Build stage
 # --------------------------
-FROM eclipse-temurin:17-jdk AS build
+FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 
 # Copy everything
@@ -16,7 +16,7 @@ RUN ./mvnw -DskipTests clean package
 # --------------------------
 # Run stage
 # --------------------------
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Copy the jar from build stage
